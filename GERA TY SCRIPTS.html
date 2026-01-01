@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GERA TY SCRIPTS</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0f172a;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.1) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.1) 0px, transparent 50%);
+        }
+        
+        .gaming-font {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        /* Neon Glow Animation */
+        @keyframes neon-pulse {
+            0%, 100% { text-shadow: 0 0 10px rgba(59, 130, 246, 0.5), 0 0 20px rgba(59, 130, 246, 0.3); }
+            50% { text-shadow: 0 0 15px rgba(59, 130, 246, 0.8), 0 0 30px rgba(59, 130, 246, 0.5); }
+        }
+
+        .title-glow {
+            animation: neon-pulse 3s infinite;
+        }
+
+        /* Sparkle Animation for New Year */
+        @keyframes sparkle {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .sparkle-text {
+            animation: sparkle 2s infinite ease-in-out;
+        }
+
+        /* Custom Scrollbar for code blocks */
+        pre::-webkit-scrollbar {
+            height: 8px;
+        }
+        pre::-webkit-scrollbar-track {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        pre::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 4px;
+        }
+        pre::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
+
+        /* Toast Notification Styling */
+        #toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #10B981;
+            color: #fff;
+            text-align: center;
+            border-radius: 8px;
+            padding: 16px;
+            position: fixed;
+            z-index: 50;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            font-size: 17px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: opacity 0.3s, bottom 0.3s;
+        }
+
+        #toast.show {
+            visibility: visible;
+            opacity: 1;
+            bottom: 50px;
+        }
+    </style>
+</head>
+<body class="text-gray-200 min-h-screen flex flex-col">
+
+    <!-- Navbar / Top Bar -->
+    <nav class="w-full bg-slate-900/80 backdrop-blur-md border-b border-slate-700 sticky top-0 z-40">
+        <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-code text-blue-500 text-xl"></i>
+                <span class="gaming-font font-bold text-lg text-white tracking-wider">GERA TY</span>
+            </div>
+            <div class="text-xs font-mono bg-slate-800 px-2 py-1 rounded border border-slate-600 text-green-400">
+                v1.2
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-3xl mx-auto w-full px-4 py-8">
+        
+        <!-- Header Section -->
+        <header class="text-center mb-10">
+            <h1 class="gaming-font text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 mb-2 title-glow uppercase">
+                GERA TY SCRIPTS
+            </h1>
+            <h2 class="text-xl md:text-2xl text-slate-400 font-light tracking-wide mb-2">
+                Administrador de Scripts
+            </h2>
+            <div class="inline-block bg-slate-800/50 border border-slate-700 rounded-full px-4 py-1 mb-6">
+                <span class="text-green-400 font-semibold text-sm">
+                    <i class="fa-solid fa-check-circle mr-1"></i> Actualizado 2025
+                </span>
+            </div>
+
+            <div class="bg-gradient-to-r from-slate-800 to-slate-900 border border-slate-700 p-4 rounded-xl shadow-lg relative overflow-hidden group">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-500 via-red-500 to-yellow-500 animate-pulse"></div>
+                <h3 class="text-2xl md:text-3xl font-bold text-yellow-400 sparkle-text">
+                    🎇 Feliz Año Nuevo 🎇
+                </h3>
+            </div>
+        </header>
+
+        <!-- Scripts Section -->
+        <section>
+            <div class="flex items-center gap-3 mb-6">
+                <h3 class="text-2xl font-bold text-white">Scripts 👇</h3>
+                <div class="h-px bg-slate-700 flex-grow"></div>
+            </div>
+
+            <!-- Category: Juegos Generales -->
+            <div class="mb-8">
+                <div class="flex items-center gap-2 mb-4 text-slate-300">
+                    <i class="fa-solid fa-gamepad text-purple-400"></i>
+                    <h4 class="font-semibold text-lg">Casi todos los juegos</h4>
+                </div>
+
+                <!-- Script Card 1 -->
+                <div class="bg-slate-800 border border-slate-700 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all hover:border-blue-500/50">
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h5 class="text-xl font-bold text-white mb-1">LV MODS</h5>
+                                <p class="text-xs text-slate-400">Script universal • Ejecución rápida</p>
+                            </div>
+                            <span class="bg-blue-900/50 text-blue-300 text-xs px-2 py-1 rounded border border-blue-500/30">LUA</span>
+                        </div>
+                        
+                        <!-- Code Block -->
+                        <div class="relative group">
+                            <pre class="bg-black/80 text-green-400 p-4 rounded-lg text-sm font-mono overflow-x-auto border border-slate-700 whitespace-nowrap scrollbar-hide" id="script1">loadstring(game:HttpGet("https://pastebin.com/raw/3uyCMSWT"))()</pre>
+                            
+                            <!-- Copy Button -->
+                            <button onclick="copyScript('script1')" class="absolute top-2 right-2 bg-slate-700 hover:bg-slate-600 text-white p-2 rounded-md shadow-lg transition-colors border border-slate-600 flex items-center gap-2 text-xs opacity-0 group-hover:opacity-100 focus:opacity-100">
+                                <i class="fa-regular fa-copy"></i> Copiar
+                            </button>
+                        </div>
+
+                        <!-- Mobile Copy Button (Always visible on mobile layouts) -->
+                        <button onclick="copyScript('script1')" class="w-full mt-3 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-semibold py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 shadow-lg md:hidden">
+                            <i class="fa-regular fa-copy"></i> Copiar Script
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 py-8 mt-4">
+        <div class="max-w-2xl mx-auto px-4 text-center">
+            <p class="text-slate-300 mb-2">Próximamente se agregarán más</p>
+            <p class="text-slate-500 text-sm mb-6">Por favor comenta en el vídeo cuáles quieres que agreguemos</p>
+            
+            <!-- Social Media (TikTok) -->
+            <div class="mb-8">
+                <a href="https://www.tiktok.com/@gera.ty" target="_blank" class="inline-flex items-center gap-2 px-6 py-2 bg-black hover:bg-gray-800 border border-gray-700 rounded-full text-white transition-all transform hover:scale-105 shadow-lg group">
+                    <i class="fa-brands fa-tiktok text-xl text-pink-500 group-hover:text-pink-400"></i>
+                    <span class="font-bold">@gera.ty</span>
+                </a>
+            </div>
+
+            <div class="flex justify-center gap-4 text-2xl text-yellow-500 mb-8">
+                <span>🎇</span>
+                <span>🎄</span>
+            </div>
+
+            <!-- Copyright Section -->
+            <div class="border-t border-slate-800 pt-6">
+                <p class="text-slate-500 text-sm font-mono">
+                    &copy; 2025 GERA TY SCRIPTS
+                </p>
+                <div class="flex flex-col items-center justify-center gap-1 mt-2 text-slate-600 text-xs font-mono">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-copyright"></i>
+                        <span>Derechos de autor:</span>
+                    </div>
+                    <span class="text-slate-400 font-bold tracking-wide text-sm">Gerardo Villa Ruiz</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast"><i class="fa-solid fa-check-circle mr-2"></i> ¡Script copiado al portapapeles!</div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        function copyScript(elementId) {
+            // Get the text content from the PRE element
+            var copyText = document.getElementById(elementId).innerText;
+
+            // Create a temporary textarea element (reliable method for iframes/webviews)
+            var tempTextArea = document.createElement("textarea");
+            tempTextArea.value = copyText;
+            document.body.appendChild(tempTextArea);
+
+            // Select and copy
+            tempTextArea.select();
+            tempTextArea.setSelectionRange(0, 99999); /* For mobile devices */
+            
+            try {
+                // Execute copy command
+                document.execCommand("copy");
+                showToast();
+            } catch (err) {
+                console.error("Error al copiar", err);
+                alert("No se pudo copiar automáticamente. Por favor selecciona el texto manualmente.");
+            }
+
+            // Remove the temporary element
+            document.body.removeChild(tempTextArea);
+        }
+
+        function showToast() {
+            var x = document.getElementById("toast");
+            x.className = "show";
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        }
+    </script>
+</body>
+</html>
+
+
